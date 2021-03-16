@@ -1,15 +1,39 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Martin Guzman`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Martin Guzman`,
+      summary: `who lives and works in Vancouver, BC helping networks stay secure.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `A blog about cybersecurity, and OSInt.`,
+    siteUrl: `https://www.martin-guzman.com/`,
     social: {
-      twitter: `kylemathews`,
+      linkedin: `martin-guzman-ca`,
     },
+    menuLinks: [
+      {
+        name: 'Home',
+        slug: '/',
+      },
+      {
+        name: 'Articles',
+        slug: '/articles',
+      },
+      {  
+        name: 'About',
+        slug: '/about',
+      },
+      {  
+        name: 'Contact',
+        slug: '/contact',
+      },
+    ],
+    externalLinks: [
+      {
+        name: 'LinkedIn',
+        url: `https://www.linkedin.com/in/martin-guzman-ca`,
+      },
+    ],
   },
   plugins: [
     {
@@ -33,23 +57,23 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 1200,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-autolink-headers`,
           `gatsby-remark-smartypants`,
         ],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
+    },
+    `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -60,16 +84,22 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Martin Guzman`,
+        short_name: `Martin`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#4337C8`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/icon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // Add any options here
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

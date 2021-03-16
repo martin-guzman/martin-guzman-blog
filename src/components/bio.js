@@ -1,18 +1,21 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+/*  Bio Component
+    siteMetaData information from gatsby-config.js
+    Appears on Article Page ./src/templates/blog-post.js
+*/
+// Import React and Gatsby Elements
+import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+// Import Utilities and Style Elements
+import { BioContainer, BioIcon, BioDescription, HrefLink } from '../elements/'
+
+// Import Components
+import SVGMartin from './svg/svg-martin' 
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
-      avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+      avatar: file(absolutePath: { regex: "/icon.png/" }) {
         childImageSharp {
           fixed(width: 50, height: 50, quality: 95) {
             ...GatsbyImageSharpFixed
@@ -26,7 +29,7 @@ const Bio = () => {
             summary
           }
           social {
-            twitter
+            linkedin
           }
         }
       }
@@ -37,30 +40,19 @@ const Bio = () => {
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
-  const avatar = data?.avatar?.childImageSharp?.fixed
-
   return (
-    <div className="bio">
-      {avatar && (
-        <Image
-          fixed={avatar}
-          alt={author?.name || ``}
-          className="bio-avatar"
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
-      )}
+    <BioContainer>
+      <BioIcon>
+        <SVGMartin />
+      </BioIcon>
+      <BioDescription>
       {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
+        <p>Written by <strong>{author.name}</strong> {author?.summary || null}
+          {` `} <br /><HrefLink href={`https://linkedin.com/in/${social?.linkedin || ``}`}>Connect with me on LinkedIn</HrefLink>.
         </p>
       )}
-    </div>
+      </BioDescription>
+    </BioContainer>
   )
 }
 

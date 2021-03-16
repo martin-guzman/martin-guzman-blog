@@ -1,69 +1,44 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+/*  Index Page
+    Description: Page includes Hero component with introduction and list of articles with a limit of 9.
+*/
+// Import React and Gatsby
+import React from 'react'
+import { graphql } from 'gatsby'
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+// Import Utilities and Style Elements
+import { Container, HeroIntroduction, HeroText } from '../elements'
 
-const BlogIndex = ({ data, location }) => {
+// Import Components
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import HeroLinks from '../components/hero/hero-links'
+import Hero from '../components/hero/hero'
+import ArticleList from '../components/articles/articlelist'
+
+const Index = ({ data, location }) => {
+
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
 
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
-
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <Bio />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const title = post.frontmatter.title || post.fields.slug
-
-          return (
-            <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
-                itemScope
-                itemType="http://schema.org/Article"
-              >
-                <header>
-                  <h2>
-                    <Link to={post.fields.slug} itemProp="url">
-                      <span itemProp="headline">{title}</span>
-                    </Link>
-                  </h2>
-                  <small>{post.frontmatter.date}</small>
-                </header>
-                <section>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: post.frontmatter.description || post.excerpt,
-                    }}
-                    itemProp="description"
-                  />
-                </section>
-              </article>
-            </li>
-          )
-        })}
-      </ol>
+    <Layout location={location} >
+    <SEO title={siteTitle} />
+      <Hero>
+        <HeroText>
+          <h1>Hi, I'm Martin.</h1>
+          <HeroIntroduction>I'm a self-starter and top-ranked NCL CTF competitor, with a strong analytical mindset with skills in OSINT, penetration testing, scripting, security, and experience in multiple OS platforms. I have a passion for Cybersecurity, OSINT, CTF's and interested in making a difference.</HeroIntroduction>
+          <HeroLinks />
+        </HeroText>
+      </Hero>
+      <Container>
+        <h2>List of Posts</h2>
+        <ArticleList posts={posts} key={posts.id} />
+      </Container>
     </Layout>
   )
 }
 
-export default BlogIndex
+export default Index
 
 export const pageQuery = graphql`
   query {
@@ -72,7 +47,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, , limit: 9) {
       nodes {
         excerpt
         fields {
@@ -82,6 +57,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          tags
         }
       }
     }
