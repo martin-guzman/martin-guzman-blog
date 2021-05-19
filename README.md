@@ -12,7 +12,9 @@ The site is responsive with fluid typography and UI Elements designed and select
 Article posts and tags are created programmatically using createPages feature in gatsby.node. 
 
 Article page template is located in './src/templates/blog-post.js'.
+
 Article tags template is located in './src/templates/tags.js'.
+
 Article Markdown Files location and file structure: './content/blog/post-name/index.md'. 
 
 
