@@ -1,8 +1,8 @@
-# Martin Guzman GatsbyJS 2.0 MD Blog/Website 
+# Martin Guzman GatsbyJS 3.0 MD Blog/Website 
 
 A personal website and blog for Martin Guzman, a Cyber Threat Intelligence Analyst.
 
-Built with Gatsby.js 2.0 gatsby-starter-blog.
+Built with Gatsby.js 3.0 gatsby-starter-blog.
 https://github.com/gatsbyjs/gatsby-starter-blog
 
 The site is responsive with fluid typography and UI Elements designed and selected to improve accessibility.
@@ -13,7 +13,6 @@ Article posts and tags are created programmatically using createPages feature in
 
 Article page template is located in './src/templates/blog-post.js'.
 Article tags template is located in './src/templates/tags.js'.
-
 Article Markdown Files location and file structure: './content/blog/post-name/index.md'. 
 
 
@@ -31,5 +30,3 @@ Styled-components and Gatsby style elements are located in './src/elements/'. El
 - [Gatsby](https://www.gatsbyjs.org/) Gatsby
 - [Styled Components](https://styled-components.com/) Style CSS in modern JavaScript/React components.
 - [WebAIM](https://webaim.org/) Resources for web accessibility.
-
-# website-2021
