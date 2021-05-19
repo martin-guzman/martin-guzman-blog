@@ -2,21 +2,22 @@
     Each tag is linked to a page of it's respective tagged name.
 */
 import React from 'react'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
  // Utilities and Style Elements
 import kebabCase from 'lodash/kebabCase'
-import { HeroTagLinks } from '../elements/'
+import { ListTags, TagLink } from '../elements/'
 
 const TagListLinks = props => {
   return (
-    <div>
+    <ListTags>
       {props.tags.map((tag) => (
-        <div key={tag}>
-          <HeroTagLinks to={`/articles/tags/${kebabCase(tag)}/`}>{tag}</HeroTagLinks>
-        </div>
+        <li key={tag}>
+          <TagLink to={`/articles/tags/${kebabCase(tag)}/`}>{tag}</TagLink>
+        </li>
       ))}
-    </div>
+    </ListTags>
   )
 }
 

@@ -1,5 +1,4 @@
-/* Template Description: Tag List
-  
+/* Tag List
 */
 // Import React and Gatsby
 import React from 'react'

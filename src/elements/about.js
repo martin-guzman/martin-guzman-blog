@@ -2,7 +2,6 @@
 import styled from 'styled-components'
 
 export const HeadingThree = styled.h3`
-  font-size: 1rem;
   padding-bottom: .25rem;
  `
 
@@ -11,7 +10,7 @@ export const HeadingFour = styled.h4`
 `
 
 export const ParagraphInfo = styled.p`
-  color: ${props => props.theme.colors.grey2};
+  color: black;
   font-size: 0.75rem;
   line-height: 1.35rem;
   max-width: ${props => props.theme.sizes.medWidth};
@@ -28,6 +27,12 @@ export const ParagraphInfo = styled.p`
   }
 }
 `
+
+export const ParagraphDate = styled(ParagraphInfo)`
+  color: ${props => props.theme.colors.grey1};
+  font-size: 0.6rem;
+`
+
 export const Footnote = styled.cite`
   display: block;
   color: ${props => props.theme.colors.grey1};

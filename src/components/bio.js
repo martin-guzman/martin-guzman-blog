@@ -48,7 +48,8 @@ const Bio = () => {
       <BioDescription>
       {author?.name && (
         <p>Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `} <br /><HrefLink href={`https://linkedin.com/in/${social?.linkedin || ``}`}>Connect with me on LinkedIn</HrefLink>.
+          {` `} <br /><HrefLink href={`https://linkedin.com/in/${social?.linkedin || ``}`}>Connect with me on LinkedIn</HrefLink>.<br />
+          
         </p>
       )}
       </BioDescription>

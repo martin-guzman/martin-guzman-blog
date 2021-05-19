@@ -15,7 +15,7 @@ export const ViewAllButton = props => {
 export const ContainerViewAll = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;  
   width: 100%;
   text-decoration: none;

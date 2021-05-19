@@ -49,6 +49,16 @@ export const HeroTitle = styled.h1`
   padding-bottom: .5rem;
 `
 
+export const HeroModuleInfo = styled.h2`
+  align-self: flex-start;
+  color: ${props => props.theme.colors.purple2};
+  font-size: 0.85rem;
+  line-height: 1.5rem;
+  text-transform: capitalize;
+  margin-bottom: 0;
+  padding-bottom: 0;
+`
+
 export const HeroArticleInfo = styled.p`
   align-self: flex-start;
   color: black;
@@ -112,7 +122,6 @@ export const HeroLinksContainer = styled.nav`
   li {
     display: inline-block;
     margin-right: .75em;
-
 
     &:first-of-type {
       display: none;

@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 // Import Utilities and Style Elements
@@ -15,7 +16,9 @@ const NotFoundPage = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
       <Container>
-      <h1>404: Not Found</h1>
+        <h1>Oppsies</h1>
+        <p>404: Not Found</p>
+        <p>Not all requests can be winners.</p>
       </Container>
     </Layout>
   )

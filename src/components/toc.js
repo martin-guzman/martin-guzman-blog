@@ -15,7 +15,7 @@ const ToC = ({ headings }) => (
     <TocUl>
       <TocHeader id="id-1">Table of Contents</TocHeader>
         {headings.map(heading => {
-          if (heading.depth > 4) {
+          if (heading.depth > 3) {
             return <div />
           }
           return (

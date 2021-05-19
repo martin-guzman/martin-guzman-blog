@@ -6,6 +6,7 @@ export const BioContainer = styled.div`
   grid-template-columns: 100px 1fr;
   grid-column-gap: 0;
   align-self: center;
+  padding-top: calc((1.16rem - 1rem) + 0.16rem);
   padding-bottom: calc((1.16rem - 1rem) + 0.16rem);
 
   @media only screen and (min-width : 768px) {

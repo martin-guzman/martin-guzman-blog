@@ -9,6 +9,7 @@ import {
   HeadingThree,
   HeadingFour,
   ParagraphInfo,
+  ParagraphDate,
   Footnote,
   SupElement,
 } from './about'
@@ -61,6 +62,7 @@ import {
 
 import { 
   Container, 
+  ContainerArticleNavigation,
   ContainerTwoColumns, 
   ContainerAbout,
   ContainerAside,
@@ -84,6 +86,7 @@ import {
   HeroText, 
   HeroTitle,
   HeroArticleInfo,
+  HeroModuleInfo,
   HeroContainerTagList,
   HeroTagLinks,
   HeroIntroduction,
@@ -98,10 +101,12 @@ import {
   HrefNavLink,
   ContainerMenu,
   ContainerMenuTOC,
+  TagLink
 } from './links-hrefs'
 
 import { 
   ListIcon,
+  ListTags,
 } from './lists'
 
 import { 
@@ -117,6 +122,7 @@ export {
   HeadingThree,
   HeadingFour,
   ParagraphInfo,
+  ParagraphDate,
   Footnote,
   SupElement,
 
@@ -157,6 +163,7 @@ export {
   CardCategoryViewMore,
 
   Container, 
+  ContainerArticleNavigation,
   ContainerTwoColumns, 
   ContainerAbout,
   ContainerAside,
@@ -174,6 +181,7 @@ export {
   HeroText, 
   HeroTitle,
   HeroArticleInfo,
+  HeroModuleInfo,
   HeroContainerTagList,
   HeroTagLinks,
   HeroIntroduction,
@@ -186,8 +194,10 @@ export {
   HrefNavLink,
   ContainerMenu,
   ContainerMenuTOC,
+  TagLink,
 
   ListIcon,
+  ListTags,
 
   TocHeader,
   TocUl,

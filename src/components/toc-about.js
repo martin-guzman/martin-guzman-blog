@@ -16,33 +16,26 @@ const ToCAbout = ({ isActive }) => {
 
   return ( 
     <nav aria-labelledby="id-2" className="sticky-inner">
-      
       <TocUl>
-      <TocHeader id="id-2">Table of Contents</TocHeader>
-      <TocLi>
-        <TocAnchorLink to="/about#overview" title="Overview" 
-        aria-label="Table of Contents"
-        role="button"
-        />
-      </TocLi>
-      <TocLi>
-        <TocAnchorLink to="/about#skills" title="Skill Highlights" 
-        aria-label="Table of Contents"
-        role="button"
-        />
-      </TocLi>
-      <TocLi>
-        <TocAnchorLink to="/about#education" title="Education Highlights" 
-        aria-label="Table of Contents"
-        role="button"
-        />
-      </TocLi>
-      <TocLi>
-        <TocAnchorLink to="/about#ncl" title="NCL Highlights" 
-        aria-label="Table of Contents"
-        role="button"
-        />
-      </TocLi>
+        <TocHeader id="id-2">Table of Contents</TocHeader>
+        <TocLi>
+          <TocAnchorLink to="/about#overview" title="Overview" 
+          aria-label="Table of Contents"
+          role="button"
+          />
+        </TocLi>  
+        <TocLi>
+          <TocAnchorLink to="/about#ncl" title="NCL & CTFs Highlights" 
+          aria-label="Table of Contents"
+          role="button"
+          />
+        </TocLi>
+        <TocLi>
+          <TocAnchorLink to="/about#education" title="Education Highlights" 
+          aria-label="Table of Contents"
+          role="button"
+          />
+        </TocLi>
       </TocUl>
     </nav>
   )

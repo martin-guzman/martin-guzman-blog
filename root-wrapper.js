@@ -79,7 +79,7 @@ const GlobalStyles = createGlobalStyle`
 
 	h1 {
 		align-self: flex-start;
-		color: ${props => props.theme.colors.purple1};
+		color: ${props => props.theme.colors.purple2};
 		line-height: calc((3rem - 2rem) + 1.5rem);
 		margin-top: calc((1.5rem - 2rem) + 1.5rem);
 		padding-bottom: calc((1rem - 1rem) + .85rem * 2);
@@ -87,35 +87,69 @@ const GlobalStyles = createGlobalStyle`
 		text-transform: capitalize;
 		font-size: calc(1.818vw + 36.18182px);
 		letter-spacing: .03em;	
+
 	}
 
 	h2 {
 		color: ${props => props.theme.colors.purple2};
 		font-size: 1.44rem;
-		line-height: 1.25rem;
+		line-height: 1.35rem;
 		margin-top: calc((1.5rem - 1rem) + 1rem);
 		padding-bottom: calc((1rem - 1rem) + 0.65rem);
 	}
 
 	h3 {
+		color: black;
 		font-size: 1.12rem;
 		line-height: 1.25rem;
-		margin-top: calc((1rem - .25rem) + .5rem);
-		padding-bottom: calc((1rem - 1rem) + 0.65rem);
+		margin-top: calc((1rem - .15rem) + .75rem);
+		padding-bottom: calc((1rem - .75rem) + 0.5rem);
 	}
 
 	h4 {
-		font-size: .96rem;
+		font-size: .8rem;
 		line-height: 1.25rem;
 		margin-top: calc((1.5rem - 1rem) + 1rem);
 		padding-bottom: .35rem;
 	}
 
 	h5 {
-		color: ${props => props.theme.colors.grey2};
+		color: ${props => props.theme.colors.grey1};
 		line-height: 1.25rem;
-		font-size: .576rem;
+		font-size: 0.75rem;
+		font-weight: 500;
 		margin-top: calc((.5rem - .875rem) + .5rem);
+	}
+
+	ol {
+		color: ${props => props.theme.colors.grey1};
+		font-size: 0.75rem;
+		line-height: 1.32rem;
+		max-width: ${props => props.theme.sizes.maxText};
+		padding-left: 32px;
+		padding-bottom: calc((1.16rem - 1rem) + 0.65rem);
+
+		&:last-of-type {
+			padding-bottom: calc((2.16rem - 1rem) + 0.65rem);
+		}
+	}
+
+	blockquote {
+		color: #004085;
+		background-color: ${props => props.theme.colors.purple5};
+		border: none;
+		border-left: 3px solid ${props => props.theme.colors.purple3};
+		padding: .25rem; 
+		margin-bottom: calc((2.16rem - 1rem) + 0.65rem);
+
+		p {
+			font-weight: 500;
+			font-size: 0.65rem;
+			line-height: 1.25rem;
+			&:last-of-type {
+				padding-bottom: 0;
+			}
+		}
 	}
 
 	#canvas {
@@ -147,6 +181,25 @@ const GlobalStyles = createGlobalStyle`
 			position: fixed;
 			top: 0;
 		}
+	}
+
+	.gatsby-highlight {
+		font-size: .55rem;
+	  border-radius: 0;
+	  margin:.5rem 0;
+	  padding: 0;
+	  overflow: auto;
+	  max-width: ${props => props.theme.sizes.maxCode};
+	}
+
+	.gatsby-highlight :not(pre) > code[class*='language-'] {
+		white-space: normal;
+		padding: 4rem;
+	}
+
+	:not(pre) > code[class*="language-"]  {
+		padding: .5em;
+		font-size: .55rem;
 	}
 `
 

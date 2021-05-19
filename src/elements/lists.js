@@ -22,3 +22,18 @@ export const ListIcon = styled.ul`
 		}
 	}
 `
+
+export const ListTags = styled.ul`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: top;  
+  font-size: .65rem;
+  line-height: 1rem;
+	li { 
+    list-style-type: none;
+    margin: 5px;
+    padding: 2px;
+	}
+`

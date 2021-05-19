@@ -14,16 +14,19 @@ export const Container = styled.div`
 		padding: .25rem .5rem;
 	}
 `
+export const ContainerArticleNavigation = styled(Container)`
+  border-top: 1px solid ${props => props.theme.colors.purple3};
+`
 
 export const ContainerTwoColumns = styled.div`
   display: grid;
   grid-template-areas:
     'toc'
     'article';
-   grid-auto-flow: dense;
-   row-gap: 1rem;
-   width: 100%;
-   max-width: ${props => props.theme.sizes.maxWidth};
+  grid-auto-flow: dense;
+  row-gap: 1rem;
+  width: 100%;
+  max-width: ${props => props.theme.sizes.maxWidth};
 
   @media (min-width: 800px) {
     grid-template-areas:
@@ -33,9 +36,9 @@ export const ContainerTwoColumns = styled.div`
   }
 `
 
- export const ContainerAside = styled.aside`
+export const ContainerAside = styled.aside`
 
- `
+`
 
 export const ContainerAbout = styled.div`
   grid-area: article;

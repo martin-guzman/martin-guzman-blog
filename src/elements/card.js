@@ -44,7 +44,7 @@ export const CardTagList = styled.div`
   font-size: 14px;
   font-weight: 600;
   letter-spacing: .08em;
-  line-height: .8rem;
+  line-height: .7rem;
   transition: color 300ms ease-in-out; 
   
   ${Card}:hover & {
@@ -57,7 +57,7 @@ export const CardTagList = styled.div`
 export const CardTitle = styled.div`  
   display: inline;
   position: absolute;  
-  top: 100px;
+  top: 130px;
   left: 32px;  
   z-index: 3;
   color: ${props => props.theme.colors.black};

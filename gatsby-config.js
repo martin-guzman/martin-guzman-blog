@@ -3,7 +3,7 @@ module.exports = {
     title: `Martin Guzman`,
     author: {
       name: `Martin Guzman`,
-      summary: `who lives and works in Vancouver, BC helping networks stay secure.`,
+      summary: `who currently studing for his OSCP Certification.`,
     },
     description: `A blog about cybersecurity, and OSInt.`,
     siteUrl: `https://www.martin-guzman.com/`,
@@ -50,6 +50,8 @@ module.exports = {
         name: `assets`,
       },
     },
+
+
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -60,11 +62,67 @@ module.exports = {
               maxWidth: 1200,
             },
           },
+          {
+            resolve: 'gatsby-remark-emojis',
+            options: {
+              // Deactivate the plugin globally (default: true)
+              active : true,
+              // Add a custom css class
+              class  : 'emoji-icon',
+              // In order to avoid pattern mismatch you can specify
+              // an escape character which will be prepended to the
+              // actual pattern (e.g. `#:poop:`).
+              escapeCharacter : '#', // (default: '')
+              // Select the size (available size: 16, 24, 32, 64)
+              size   : 32,
+              // Add custom styles
+              styles : {
+                display      : 'inline',
+                margin       : '0',
+                'margin-top' : '1px',
+                position     : 'relative',
+                top          : '5px',
+                width        : '25px'
+              }
+            }
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-bash",
+              inlineCodeMarker: null,
+              aliases: { sh: "bash" },
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              languageExtensions: [
+                {
+                  language: "bash",
+                  extend: "bash",
+                  definition: {
+                    superscript_types: /(SuperType)/,
+                  },
+                  insertBefore: {
+                    function: {
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
+              ],
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-smartypants`,
         ],
       },
     },
+
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -74,12 +132,12 @@ module.exports = {
       }
     },
     `gatsby-plugin-smoothscroll`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     //trackingId: `ADD YOUR TRACKING ID HERE`,
+    //   },
+    // },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,

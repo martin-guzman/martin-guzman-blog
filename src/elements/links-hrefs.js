@@ -100,3 +100,22 @@ export const ContainerMenuTOC = styled.nav`
 
 export const ContainerMenuFooter = styled.div`
 `
+
+
+export const TagLink = styled(Link)`
+  cursor: pointer;
+  color: ${props => props.theme.colors.purple1};
+  background: rgba(94, 82, 218, .2);
+  border-radius: 6px;
+  font-size: 0.5rem;
+  font-weight: 400;
+  text-decoration: none;
+  padding: .25rem .75rem;
+
+  &:hover {
+    color: white;
+    background: ${props => props.theme.colors.purple2};
+    transition: color 300ms ease-in-out,
+                background 300ms ease-in-out;
+  }
+`

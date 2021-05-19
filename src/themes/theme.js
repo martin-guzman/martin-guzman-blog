@@ -36,6 +36,7 @@ export default {
 		maxWidth: "35rem",
 		maxTitle: "30rem",
 		maxText: "20rem",
+		maxCode: "22rem",
 		xsWidth: "15rem",
 		smWidth: "20rem",
 		medWidth: "25rem",

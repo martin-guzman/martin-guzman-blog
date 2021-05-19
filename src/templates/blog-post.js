@@ -1,7 +1,5 @@
 /*  Template: Article/Post 
-    Description: Article created from root/content/blog/articlefolder. File format is MD. 
-    To include mdx format or edit article file path edit gatsby-config.js and gatsby-node.js.
-  
+    Description: Article created from root/content/blog/articlefolder. File format is MD.   
 */
 // Import React and Gatsby
 import React from 'react'
@@ -11,10 +9,12 @@ import { graphql } from 'gatsby'
 // Import Utilities and Style Elements
 import { 
   Container, 
+  ContainerArticleNavigation,
   ContainerTwoColumns,
   HeroText, 
   HeroTitle,
   HeroArticleInfo,
+  HeroModuleInfo,
   HeroContainerTagList,
   ArticlePost,    
   ArticleLink, 
@@ -41,7 +41,7 @@ const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
-  const { tags = [], title, date, readTime } = post.frontmatter
+  const { tags = [], title, moduleTitle, moduleSection, moduleSubsection, date, readTime } = post.frontmatter
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -52,25 +52,27 @@ const BlogPostTemplate = ({ data, location }) => {
     
       <Hero>
         <HeroText>
-          <HeroContainerTagList>
-          <TagListLinks tags={tags} />
-          </HeroContainerTagList>
+          <HeroModuleInfo>{moduleTitle}: Module {moduleSection}.{moduleSubsection}</HeroModuleInfo>
           <HeroTitle>{title}</HeroTitle>
           <HeroArticleInfo>{date} | {readTime} Minute Read</HeroArticleInfo>
+                    <HeroContainerTagList>
+            <TagListLinks tags={tags} />
+          </HeroContainerTagList>
         </HeroText>
       </Hero>
 
       <Container>
         <ContainerTwoColumns>
-          <ArticlePost itemScope itemType="http://schema.org/Article" >
+          <ArticlePost itemScope itemType="http://schema.org/Article" > 
             <section id="content" dangerouslySetInnerHTML={{ __html: post.html }} itemProp="articleBody" />
-            <Bio />
+             <Bio />
           </ArticlePost>
           <StickyContainer>
             <ToC headings={post.headings} />
           </StickyContainer>
         </ContainerTwoColumns>
- 
+      </Container>
+      <ContainerArticleNavigation>
         <ArticleNextPreviousNav role="navigation" aria-label="Next Previous Articles">
           <ArticleNav>
             {previous && (
@@ -93,7 +95,7 @@ const BlogPostTemplate = ({ data, location }) => {
             )}
           </ArticleNav>
         </ArticleNextPreviousNav>
-      </Container>
+      </ContainerArticleNavigation>
     </Layout>
   )
 }
@@ -125,6 +127,9 @@ export const pageQuery = graphql`
       }
       frontmatter {
         title
+        moduleTitle
+        moduleSection
+        moduleSubsection
         tags
         readTime
         date(formatString: "MMMM DD, YYYY")
